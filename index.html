@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>星穹雷电 · 纵版射击 Demo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="hud">
+        <div class="hud-item"><span>得分</span><strong id="score">0</strong></div>
+        <div class="hud-item"><span>关卡</span><strong id="stage">1 / 30</strong></div>
+        <div class="hud-item"><span>宝石</span><strong id="gems">0</strong></div>
+        <div class="hud-item"><span>生命</span><strong id="life">3</strong></div>
+      </header>
+
+      <div class="game-shell">
+        <canvas id="game" width="480" height="800"></canvas>
+        <div class="overlay" id="overlay">
+          <h1>星穹雷电</h1>
+          <p>WASD / 方向键移动 · J / 空格射击 · K 释放炸弹</p>
+          <button id="startBtn">开始作战</button>
+        </div>
+      </div>
+
+      <footer class="tips">
+        <span>击败精英机可获得宝石并升级火力。</span>
+        <span>每 5 关会出现强化波次，注意走位。</span>
+      </footer>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
+</html>
