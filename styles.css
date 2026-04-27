@@ -1,0 +1,118 @@
+:root {
+  --bg-1: #050b1f;
+  --bg-2: #102148;
+  --hud: #9ed3ff;
+  --accent: #42b8ff;
+  --danger: #ff624a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: "Segoe UI", "PingFang SC", sans-serif;
+  color: white;
+  background: radial-gradient(circle at 50% 20%, #1f3f75, var(--bg-1) 55%),
+    linear-gradient(160deg, #040916, var(--bg-2));
+}
+
+.wrap {
+  width: min(96vw, 540px);
+  display: grid;
+  gap: 12px;
+}
+
+.hud {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.hud-item {
+  background: rgba(9, 24, 53, 0.8);
+  border: 1px solid rgba(126, 188, 255, 0.35);
+  border-radius: 10px;
+  padding: 8px;
+  text-align: center;
+}
+
+.hud-item span {
+  display: block;
+  font-size: 12px;
+  color: #85c1ef;
+}
+
+.hud-item strong {
+  font-size: 20px;
+  color: #ebf7ff;
+}
+
+.game-shell {
+  position: relative;
+  border: 1px solid rgba(102, 179, 241, 0.45);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45);
+}
+
+canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: transparent;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  text-align: center;
+  background: rgba(4, 11, 32, 0.76);
+  backdrop-filter: blur(2px);
+  padding: 24px;
+}
+
+.overlay.hidden { display: none; }
+
+.overlay h1 {
+  margin-bottom: 10px;
+  font-size: 40px;
+  color: #b1e2ff;
+  text-shadow: 0 0 16px rgba(66, 184, 255, 0.7);
+}
+
+.overlay p {
+  margin-top: 0;
+  color: #9ec7ea;
+}
+
+button {
+  cursor: pointer;
+  border: 0;
+  border-radius: 999px;
+  padding: 11px 26px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #02263f;
+  background: linear-gradient(180deg, #80deff, var(--accent));
+}
+
+.tips {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: #8cb7e6;
+  font-size: 13px;
+}
+
+@media (max-width: 520px) {
+  .tips {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
